@@ -7,9 +7,3 @@
 
 [[plugins]]
   package = "@netlify/angular-runtime"
-
-# optional: client-side routing fallback if you also serve static routes
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
