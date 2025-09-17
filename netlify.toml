@@ -1,11 +1,14 @@
 [build]
-  command = "npm ci && npm run build"
+  command = "npm ci && npm run build:ssr"
   publish = "dist/website/browser"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# Angular router fallback
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+# optional: client-side routing fallback if you also serve static routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
