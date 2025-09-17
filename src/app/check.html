@@ -1,0 +1,230 @@
+<!-- Khumo Holdings Group – Landing Component Template (HTML only)
+Notes:
+- TailwindCSS classes throughout (no extra TS/JS needed)
+- Navbar sits on top of the hero image
+- Blue (#0B2C4A / #071E31) and Gold (#D4AF37 / #E5C766) palette
+- Animated gold "constellation" lines using inline SVG + keyframes below
+- All content is static; drop this into your Angular component HTML file
+-->
+
+
+<!-- Page wrapper -->
+<div class="relative min-h-screen w-full bg-[#071E31] text-white overflow-hidden">
+  <!-- Animated constellation lines in the background -->
+  <svg class="pointer-events-none absolute inset-0 w-[140%] h-[140%] -left-[20%] -top-[20%] opacity-30" viewBox="0 0 1200 1200" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="khumoGoldStroke" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#E5C766"/>
+        <stop offset="100%" stop-color="#D4AF37"/>
+      </linearGradient>
+    </defs>
+    <g stroke="url(#khumoGoldStroke)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path class="animate-draw" stroke-dasharray="1800" stroke-dashoffset="1800" d="M40,120 C260,40 420,220 640,160 S980,120 1180,280"/>
+      <path class="animate-draw-2" stroke-dasharray="1800" stroke-dashoffset="1800" d="M0,520 C220,420 360,640 580,560 S960,560 1200,740"/>
+      <path class="animate-draw-3" stroke-dasharray="1800" stroke-dashoffset="1800" d="M80,960 C280,820 520,900 740,840 S1040,860 1180,940"/>
+      <!-- twinkle nodes -->
+      <circle class="animate-float" cx="260" cy="420" r="2.5" />
+      <circle class="animate-float" cx="740" cy="560" r="2.5" />
+      <circle class="animate-float" cx="1040" cy="300" r="2.5" />
+    </g>
+  </svg>
+
+  <!-- HERO SECTION -->
+  <header class="relative z-10">
+    <!-- Nav on hero -->
+    <nav class="absolute top-0 left-0 right-0">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#top" class="flex items-center gap-2 group">
+            <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-[#E5C766] to-[#D4AF37] shadow-md ring-1 ring-white/10 flex items-center justify-center">
+              <span class="font-black text-[#071E31]">KH</span>
+            </div>
+            <span class="font-semibold tracking-wide text-white/90 group-hover:text-white">Khumo Holdings Group</span>
+          </a>
+          <div class="flex items-center gap-6">
+            <!-- Mobile menu toggle (CSS-only) -->
+            <input id="menuToggle" type="checkbox" class="peer hidden" />
+            <label for="menuToggle" class="lg:hidden inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-white/10 hover:ring-white/30 cursor-pointer">
+              <span class="sr-only">Open menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6"><path d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+            </label>
+            <ul class="hidden lg:flex items-center gap-8 text-sm">
+              <li><a href="#values" class="hover:text-[#E5C766] transition">Values</a></li>
+              <li><a href="#process" class="hover:text-[#E5C766] transition">Process</a></li>
+              <li><a href="#about" class="hover:text-[#E5C766] transition">About</a></li>
+              <li><a href="#ceo" class="hover:text-[#E5C766] transition">Leadership</a></li>
+            </ul>
+            <a href="#contact" class="hidden sm:inline-flex items-center rounded-xl border border-[#E5C766]/40 bg-white/5 px-4 py-2 text-sm font-semibold backdrop-blur hover:bg-white/10 hover:border-[#E5C766]/70 transition shadow-glow">Get in touch</a>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile dropdown -->
+      <div class="peer-checked:block hidden lg:hidden bg-[#0B2C4A]/80 backdrop-blur border-t border-white/10">
+        <ul class="mx-auto max-w-7xl px-4 py-4 space-y-3 text-sm">
+          <li><a href="#values" class="block px-2 py-2 rounded-lg hover:bg-white/5">Values</a></li>
+          <li><a href="#process" class="block px-2 py-2 rounded-lg hover:bg-white/5">Process</a></li>
+          <li><a href="#about" class="block px-2 py-2 rounded-lg hover:bg-white/5">About</a></li>
+          <li><a href="#ceo" class="block px-2 py-2 rounded-lg hover:bg-white/5">Leadership</a></li>
+          <li><a href="#contact" class="block px-2 py-2 rounded-lg hover:bg-white/5">Get in touch</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero content -->
+    <section id="top" class="relative">
+      <div class="relative h-[90vh] min-h-[640px] w-full overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2400&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#071E31]/80 via-[#071E31]/60 to-[#071E31]/95"></div>
+
+        <div class="relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center rounded-full border border-[#E5C766]/30 bg-black/10 px-3 py-1 text-xs tracking-wider uppercase">Majority Black Female‑Owned • Southern Africa</span>
+            <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+              Diversified Growth. <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E5C766] to-[#D4AF37]">Inclusive Impact.</span>
+            </h1>
+            <p class="mt-5 text-white/80 text-lg">Khumo Holdings Group drives sustainable development across construction, technology, e‑commerce, real estate, mining, energy, and property asset management — building prosperity with purpose.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#values" class="inline-flex items-center rounded-xl bg-gradient-to-br from-[#E5C766] to-[#D4AF37] px-5 py-3 font-semibold text-[#071E31] shadow-glow hover:translate-y-[1px] transition">Explore Values</a>
+              <a href="#process" class="inline-flex items-center rounded-xl border border-white/10 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10 transition">Our Process</a>
+            </div>
+
+            <!-- Animated gold accent line -->
+            <div class="mt-10 h-[3px] w-48 rounded-full bg-gradient-to-r from-transparent via-[#E5C766] to-transparent animate-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!-- VALUES -->
+  <section id="values" class="relative z-10 py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold">Company Values</h2>
+          <p class="mt-4 text-[#E5C766] font-semibold">Empowerment & Inclusive Economic Transformation</p>
+          <div class="mt-5 space-y-4 text-white/80 leading-relaxed">
+            <p>We are dedicated to driving genuine transformation by creating meaningful opportunities that uplift Black communities, with a special focus on nurturing and advancing young Black talent.</p>
+            <p>Our commitment to inclusive economic empowerment ensures that growth and success are shared equitably, fostering sustainable development and lasting social impact.</p>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl border border-white/10 bg-[#0B2C4A]/40 p-8 backdrop-blur shadow-glow">
+            <h3 class="text-lg font-semibold text-[#E5C766]">Sectors We Grow</h3>
+            <ul class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">Construction</li>
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">Technology</li>
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">Mining</li>
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">Real Estate</li>
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">E‑Commerce</li>
+              <li class="rounded-lg border border-white/10 bg-white/5 px-3 py-2">Energy</li>
+            </ul>
+            <div class="mt-6 h-px w-full bg-gradient-to-r from-transparent via-[#E5C766]/70 to-transparent"></div>
+            <p class="mt-6 text-sm text-white/70">We champion ethical, responsible growth to deliver measurable social impact and shared prosperity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS (Mission & Vision) -->
+  <section id="process" class="relative z-10 py-24 bg-[#061A2A]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <h2 class="text-3xl sm:text-4xl font-bold">Our Process</h2>
+        <div class="h-[3px] w-48 rounded-full bg-gradient-to-r from-transparent via-[#E5C766] to-transparent animate-shimmer"></div>
+      </div>
+      <div class="mt-10 grid lg:grid-cols-2 gap-8">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-xl font-semibold text-[#E5C766]">Mission</h3>
+          <p class="mt-4 text-white/80 leading-relaxed">To empower and transform communities by driving sustainable growth through diversified investments across construction, technology, mining, real estate, e‑commerce, energy. We are committed to ethical and responsible investing that integrates environmental, social, and governance (ESG) principles, fostering genuine transformation, promoting Black female ownership, and creating meaningful opportunities for young Black talent.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-8">
+          <h3 class="text-xl font-semibold text-[#E5C766]">Vision</h3>
+          <p class="mt-4 text-white/80 leading-relaxed">To be a leading, majority Black female‑owned diversified group recognized for pioneering inclusive economic empowerment, innovative solutions, and sustainable development that delivers positive social impact and superior financial returns for our clients and stakeholders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY OVERVIEW / ABOUT -->
+  <section id="about" class="relative z-10 py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-10">
+        <div class="lg:col-span-3">
+          <h2 class="text-3xl sm:text-4xl font-bold">Company Overview</h2>
+          <h3 class="mt-2 text-[#E5C766] font-semibold">About Us</h3>
+          <p class="mt-4 text-white/80 leading-relaxed">Khumo Holdings Group is a diversified, majority Black female‑owned and controlled business enterprise with strategic interests across multiple high‑impact sectors, including construction, technology, e‑commerce, real estate, mining, energy, and property asset management. The Group is deeply committed to empowerment, transformation, and inclusive economic growth, positioning itself as a leader in driving sustainable development across Southern Africa.</p>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8">
+            <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#E5C766]/40 to-[#D4AF37]/40 blur-2xl"></div>
+            <p class="text-6xl font-black tracking-tighter text-white/10">03</p>
+            <p class="mt-2 text-sm text-white/70">Years of compounding excellence</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO / LEADERSHIP -->
+  <section id="ceo" class="relative z-10 py-24 bg-[#061A2A]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold">Visionary Leadership</h2>
+          <p class="mt-4 text-white/80 leading-relaxed">As the visionary CEO of Khumo Holdings Group, I lead a dynamic and diversified portfolio spanning construction, MedTech, e‑commerce, and energy sectors. My passion lies in driving sustainable growth and innovation while championing Black ownership and ethical business practices that uplift communities and create lasting impact.</p>
+          <p class="mt-4 text-white/80 leading-relaxed">With a strategic focus on leveraging technology, operational excellence, and purpose‑driven leadership, I build businesses that not only achieve strong financial performance but also contribute meaningfully to economic transformation and social progress. At Khumo Holdings Group, we embrace forward‑thinking approaches to address industry challenges, fuel entrepreneurship, and foster inclusive opportunity.</p>
+          <p class="mt-4 text-white/80 leading-relaxed">I am committed to empowering talented teams, forging strategic partnerships, and delivering value‑centric solutions that resonate with our stakeholders. Through visionary leadership and a steadfast dedication to integrity, I aim to shape industries and inspire the next generation of African business leaders.</p>
+        </div>
+        <div>
+          <div
+            class="relative overflow-hidden rounded-3xl border border-white/10 bg-cover bg-center min-h-[380px]"
+            style="background-image: url('assets/khumo.png')"
+            >
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#071E31]/80 via-transparent to-[#071E31]/60"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <div class="inline-flex items-center gap-2 rounded-xl bg-black/30 px-4 py-2 backdrop-blur border border-white/10">
+                <div class="h-2 w-2 rounded-full bg-[#E5C766] animate-pulse"></div>
+                <span class="text-sm">Leading with purpose</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER CTA -->
+  <section id="contact" class="relative z-10 py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-[#0B2C4A] to-[#061A2A] p-10 md:p-14 overflow-hidden relative">
+        <!-- moving gold thread -->
+        <div class="pointer-events-none absolute -inset-x-16 -top-16 h-32 rotate-2 bg-gradient-to-r from-transparent via-[#E5C766] to-transparent opacity-30 animate-shimmer"></div>
+        <div class="md:flex items-center gap-10">
+          <div class="md:w-2/3">
+            <h3 class="text-2xl md:text-3xl font-bold">Let’s build prosperity with purpose.</h3>
+            <p class="mt-3 text-white/80">Partner with Khumo Holdings Group to unlock sustainable growth and inclusive impact across Africa.</p>
+          </div>
+          <div class="mt-6 md:mt-0 md:w-1/3">
+            <a href="mailto:khumoholdingsgroup@gmail.com" class="block text-center rounded-xl bg-gradient-to-br from-[#E5C766] to-[#D4AF37] px-6 py-4 font-semibold text-[#071E31] shadow-glow hover:translate-y-[1px] transition">khumoholdingsgroup@gmail.com</a>
+            <p class="mt-3 text-center text-sm text-white/70">+27 (0) 75 228 4909</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/70">
+        <p>© <span class="font-semibold text-white">Khumo Holdings Group</span> — Developed by <a rel="stylesheet" href="lungelo.dev">www.lungelo.dev</a></p>
+        <div class="flex items-center gap-4">
+          <a href="#values" class="hover:text-[#E5C766]">Values</a>
+          <span class="opacity-30">•</span>
+          <a href="#process" class="hover:text-[#E5C766]">Process</a>
+          <span class="opacity-30">•</span>
+          <a href="#about" class="hover:text-[#E5C766]">About</a>
+          <span class="opacity-30">•</span>
+          <a href="#ceo" class="hover:text-[#E5C766]">Leadership</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+</div>
